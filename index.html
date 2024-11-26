@@ -91,22 +91,26 @@
         }
 
 
-        .social-icons {
+                .social-icons {
             display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: center;  /* Center the icons horizontally */
+            gap: 20px;
         }
 
         .social-icons a {
-            margin: 0 15px;
-            font-size: 35px;
-            color: #13f4b4;
+            color: #50c5da;  /* Icon color */
+            font-size: 30px;  /* Icon size */
+            position: relative;  /* Position for the tooltip */
             text-decoration: none;
         }
 
         .social-icons a:hover {
-            color: hsl(313, 95%, 57%);
-            
+            color: #64ffff;
+            transition: all 0.3s linear ;
+            opacity: 1;
+            transform: scale(1.2);
+            font-size: 35px;
+
         }
     </style>
 </head>
