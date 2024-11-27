@@ -21,7 +21,7 @@
             margin: 50px auto;
             padding: 20px;
             border-radius: 10px;
-            background-color: #f4f4f4;
+            background-color: #f3eded;
         }
 
         .profile-header {
@@ -48,9 +48,16 @@
 
         .profile-photo-container img {
             width: 100%;
+            background: #1de0d0;
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+        }
+        .profile-photo-container img:hover{
+            box-shadow: 0 4px 15px rgba(239, 38, 205, 0.8); 
+            transform: translate(5, -5px); 
+            border-radius: 50%; 
+        
         }
 
         .profile-photo-container .change-photo-btn {
@@ -86,7 +93,7 @@
             text-decoration: none;
 
         }.profile-info p a:hover{
-            color: rgb(88, 195, 244);
+            color: rgb(6, 111, 41);
             text-decoration: underline;
         }
 
@@ -112,22 +119,62 @@
             font-size: 35px;
 
         }
+        .blinking {
+            animation: blink-animation 1s infinite step-start;
+          }
+          
+          @keyframes blink-animation {
+            0% { visibility: visible; }
+            50% { visibility: hidden; }
+            100% { visibility: visible; }
+          }
+          
+          .color-change {
+            animation: colorAnimation 5s infinite;
+          }
+          
+          @keyframes colorAnimation {
+            0% {
+              color: red; /* Initial color */
+            }
+            25% {
+              color: blue; /* 1st color change */
+            }
+            50% {
+              color: rgb(190, 34, 252); /* 2nd color change */
+            }
+            75% {
+              color: yellow; /* 3rd color change */
+            }
+            100% {
+              color: rgb(36, 212, 235); /* 4th color change */
+            }
+          }
+          #userContact{
+            font-weight: 400;
+
+          }
+          #userContact:hover{
+            font-weight: 500;
+            color: blue;
+            
+          }
     </style>
 </head>
 
 <body>
 
     <div class="container profile-container">
-        <div class="profile-header">
-            <h2>Alok Prakash</h2>
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Edit Profile</button>
+        <div class="profile-header ">
+            <h2 class="blinking "><p class="color-change">Alok Prakash</p></h2>
+            <button class="btn btn-primary color-change" data-bs-toggle="modal" data-bs-target="#editModal">Edit Profile</button>
         </div>
 
         <div class="profile-photo-container">
-            <img id="profileImage" src="https://via.placeholder.com/350" alt="Profile Photo">
+            <img id="profileImage" src="123.jpg" alt="Profile Photo">
             <button class="change-photo-btn" id="changePhotoBtn"><i class="bi bi-pencil-fill"></i></button>
         </div>
-
+      
         <div class="profile-info">
             <h3 id="userName">Alok Prakash</h3>
             <p><strong>Email:</strong> <span id="userEmail"><a href="#">alokprakash.net@gmail.com</a></span></p>
